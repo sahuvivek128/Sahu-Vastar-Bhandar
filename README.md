@@ -2,7 +2,7 @@
 ## Real OTP Login via Fast2SMS
 ## Prerequisites
 
-1. Install latest python
+1. Install latest python version
 2. Once python is installed then add the path to environment variable
 3. Check if python is installed using below command
     a. if Windows, run python --version
@@ -25,9 +25,6 @@
 ---
 
 ## Step-by-Step Setup
-
-### 1. Install Node.js
-Download and install from: https://nodejs.org (choose LTS version)
 
 ### 2. Get Fast2SMS API Key (Free)
 1. Go to https://www.fast2sms.com
