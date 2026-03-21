@@ -1,6 +1,18 @@
 # Sahu Vastra Bhandar — Setup Guide
 ## Real OTP Login via Fast2SMS
+## Prerequisites
 
+1. Install latest python
+2. Once python is installed then add the path to environment variable
+3. Check if python is installed using below command
+    a. if Windows, run python --version
+4. run pip install -r requirements.txt
+
+
+## How to run the application
+1. Open cmd terminal in vs code 
+2. run python app.py
+3. Open http://localhost:3000 in your browser
 ---
 
 ## Files in this folder
