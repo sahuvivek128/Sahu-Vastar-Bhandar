@@ -292,6 +292,76 @@ header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top
 .empty p{font-size:.8rem}
 footer{background:var(--deep);color:rgba(255,255,255,.7);text-align:center;padding:20px;font-size:.76rem;margin-top:40px}
 footer b{color:var(--lgold)}
+
+/* ─── CART BUTTON ON CARD ─── */
+.cart-btn{width:100%;margin-top:9px;padding:9px 0;border-radius:8px;border:none;background:linear-gradient(135deg,var(--maroon),var(--deep));color:#fff;font-size:.78rem;font-weight:700;cursor:pointer;letter-spacing:.3px;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:6px}
+.cart-btn:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(123,28,46,.35)}
+.cart-btn.added{background:linear-gradient(135deg,var(--success),#1b5e20)}
+
+/* ─── CART ICON IN HEADER ─── */
+.cart-icon-wrap{position:relative;cursor:pointer}
+.cart-badge{position:absolute;top:-7px;right:-7px;background:var(--danger);color:#fff;font-size:.58rem;font-weight:800;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;display:none}
+.cart-badge.show{display:flex}
+
+/* ─── PAYMENT MODAL ─── */
+#payModal{z-index:500}
+.pay-modal{background:#fff;border-radius:22px;width:100%;max-width:480px;max-height:95vh;overflow-y:auto;box-shadow:0 30px 80px rgba(0,0,0,.3);animation:fadeUp .25s ease}
+.pay-head{background:linear-gradient(135deg,var(--maroon),var(--deep));color:#fff;padding:20px 24px;border-radius:22px 22px 0 0;display:flex;justify-content:space-between;align-items:center}
+.pay-head h3{font-family:'Playfair Display',serif;font-size:1.15rem}
+.pay-close{background:rgba(255,255,255,.2);border:none;color:#fff;width:32px;height:32px;border-radius:50%;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.pay-close:hover{background:rgba(255,255,255,.35)}
+.pay-body{padding:22px 24px 28px}
+.pay-product-row{display:flex;gap:12px;align-items:center;background:var(--cream);border-radius:12px;padding:12px;margin-bottom:18px;border:1px solid var(--border)}
+.pay-product-img{width:54px;height:68px;border-radius:8px;object-fit:cover;background:var(--pink);flex-shrink:0}
+.pay-product-ph{width:54px;height:68px;border-radius:8px;background:var(--pink);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.pay-product-name{font-size:.83rem;font-weight:700;color:var(--deep);margin-bottom:3px;line-clamp:2;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.pay-product-price{font-size:1.1rem;font-weight:800;color:var(--maroon)}
+.pay-product-orig{font-size:.75rem;color:#bbb;text-decoration:line-through;margin-left:6px}
+.pay-methods{display:flex;gap:10px;margin-bottom:18px}
+.pay-tab{flex:1;padding:10px 0;border-radius:10px;border:2px solid var(--border);background:#fff;font-size:.82rem;font-weight:600;color:var(--mid);cursor:pointer;transition:all .2s;text-align:center}
+.pay-tab.active{border-color:var(--maroon);background:var(--pink);color:var(--maroon)}
+.pay-section{display:none}
+.pay-section.active{display:block;animation:fadeUp .2s ease}
+/* UPI */
+.upi-apps{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px}
+.upi-app{display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px 6px;border-radius:12px;border:2px solid var(--border);cursor:pointer;transition:all .2s;background:#fff}
+.upi-app:hover,.upi-app.sel{border-color:var(--maroon);background:var(--pink)}
+.upi-app-icon{font-size:1.6rem}
+.upi-app-name{font-size:.62rem;font-weight:700;color:var(--mid);text-align:center}
+.upi-id-row{display:flex;gap:8px;align-items:center}
+.upi-id-inp{flex:1;padding:10px 14px;border:1.8px solid var(--border);border-radius:10px;font-size:.85rem;background:var(--cream);outline:none;transition:border-color .2s}
+.upi-id-inp:focus{border-color:var(--gold)}
+/* Card */
+.card-visual{background:linear-gradient(135deg,#1a0a2e,var(--maroon));border-radius:16px;padding:20px 22px;color:#fff;margin-bottom:16px;position:relative;overflow:hidden}
+.card-visual::before{content:'';position:absolute;top:-40px;right:-40px;width:150px;height:150px;background:rgba(255,255,255,.07);border-radius:50%}
+.card-visual::after{content:'';position:absolute;bottom:-50px;left:-20px;width:120px;height:120px;background:rgba(255,255,255,.05);border-radius:50%}
+.card-chip{font-size:1.6rem;margin-bottom:14px}
+.card-num-disp{font-family:monospace;font-size:1.1rem;letter-spacing:3px;margin-bottom:14px;opacity:.9}
+.card-meta{display:flex;justify-content:space-between;font-size:.7rem;opacity:.7}
+.card-meta b{display:block;font-size:.85rem;font-weight:600;opacity:1;color:#fff}
+.card-fields{display:grid;gap:11px}
+.card-row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cin{width:100%;padding:10px 14px;border:1.8px solid var(--border);border-radius:10px;font-size:.85rem;background:var(--cream);outline:none;transition:border-color .2s;color:var(--text)}
+.cin:focus{border-color:var(--gold);background:#fff}
+.cin::placeholder{color:#bbb}
+/* Net Banking */
+.nb-list{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:14px}
+.nb-item{display:flex;align-items:center;gap:9px;padding:11px 12px;border-radius:10px;border:2px solid var(--border);cursor:pointer;font-size:.8rem;font-weight:600;color:var(--mid);transition:all .2s;background:#fff}
+.nb-item:hover,.nb-item.sel{border-color:var(--maroon);background:var(--pink);color:var(--maroon)}
+.nb-icon{font-size:1.3rem}
+/* Pay button */
+.pay-now-btn{width:100%;padding:14px;border-radius:50px;border:none;background:linear-gradient(135deg,var(--maroon),var(--deep));color:#fff;font-size:.95rem;font-weight:800;cursor:pointer;box-shadow:0 6px 20px rgba(123,28,46,.35);transition:all .22s;margin-top:6px;display:flex;align-items:center;justify-content:center;gap:8px;letter-spacing:.3px}
+.pay-now-btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 10px 28px rgba(123,28,46,.45)}
+.pay-now-btn:disabled{opacity:.65;cursor:not-allowed;transform:none}
+.pay-secure{text-align:center;font-size:.7rem;color:var(--light);margin-top:10px}
+/* Success screen */
+.pay-success{text-align:center;padding:30px 20px}
+.pay-success-icon{font-size:4rem;margin-bottom:14px;animation:bounceIn .5s ease}
+@keyframes bounceIn{0%{transform:scale(0)}70%{transform:scale(1.15)}100%{transform:scale(1)}}
+.pay-success h3{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--success);margin-bottom:8px}
+.pay-success p{font-size:.84rem;color:var(--mid);line-height:1.7;margin-bottom:20px}
+.pay-success-ref{background:var(--cream);border-radius:10px;padding:10px 16px;font-size:.78rem;color:var(--mid);margin-bottom:18px;border:1px solid var(--border)}
+.pay-success-ref b{color:var(--maroon)}
 </style>
 </head>
 <body>
@@ -323,6 +393,10 @@ footer b{color:var(--lgold)}
     </div>
     <div class="header-actions">
       <button class="hbtn" id="adminBtn" style="display:none" onclick="gotoPage('admin')">⚙️ Admin</button>
+      <div class="cart-icon-wrap hbtn" onclick="openCartDrawer()" title="View Cart" style="padding:8px 14px;display:flex;align-items:center;gap:6px;position:relative">
+        🛒 <span id="cartCountLabel">Cart</span>
+        <span class="cart-badge" id="cartBadge">0</span>
+      </div>
       <button class="hbtn primary" id="loginBtn" onclick="gotoPage('login')">👤 Login</button>
       <button class="hbtn" id="logoutBtn" style="display:none" onclick="doLogout()">Logout</button>
     </div>
@@ -592,6 +666,9 @@ footer b{color:var(--lgold)}
     </div>
     <div style="padding:16px 24px 26px">
 
+      <!-- UPLOAD ZONES — admin only -->
+      <div id="uploadZoneWrap" style="display:none">
+
       <!-- PHOTO UPLOAD -->
       <div style="margin-bottom:16px">
         <label style="font-size:.76rem;font-weight:700;color:var(--deep);display:block;margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px">
@@ -630,6 +707,8 @@ footer b{color:var(--lgold)}
           </div>
         </div>
       </div>
+
+      </div><!-- /uploadZoneWrap -->
 
       <div class="fg"><label>Saree Name *</label><input type="text" id="pName" placeholder="e.g. Kanchipuram Pure Silk Saree – Maroon Gold"></div>
       <div class="fg"><label>Description</label><textarea id="pDesc" placeholder="Fabric type, occasion, weave pattern, blouse info, care instructions…"></textarea></div>
@@ -737,6 +816,123 @@ footer b{color:var(--lgold)}
 </div>
 
 <footer><b>Sahu Vastra Bhandar</b> &nbsp;·&nbsp; Premium Sarees &nbsp;·&nbsp; Est. 1992 &nbsp;·&nbsp; Tradition woven with love 🪡</footer>
+
+<!-- ══ CART DRAWER ══ -->
+<div class="overlay" id="cartDrawer">
+  <div class="modal" style="max-width:460px;border-radius:22px">
+    <div class="modal-head" style="padding:20px 24px 16px">
+      <div style="font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--deep)">🛒 Your Cart <span id="cartDrawerCount" style="font-size:.8rem;color:var(--mid);font-family:'DM Sans',sans-serif"></span></div>
+      <button class="m-close" onclick="closeCartDrawer()">✕</button>
+    </div>
+    <div style="padding:0 24px 24px">
+      <div id="cartItemsList"></div>
+      <div id="cartEmpty" style="display:none;text-align:center;padding:30px 0;color:var(--mid)">
+        <div style="font-size:2.5rem;margin-bottom:10px">🛒</div>
+        <div style="font-weight:600;color:var(--deep);margin-bottom:5px">Your cart is empty</div>
+        <div style="font-size:.8rem">Browse our collection and add sarees!</div>
+      </div>
+      <div id="cartTotal" style="display:none;border-top:2px solid var(--border);padding-top:14px;margin-top:6px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+          <span style="font-size:.9rem;font-weight:700;color:var(--deep)">Total Amount</span>
+          <span style="font-size:1.2rem;font-weight:800;color:var(--maroon)" id="cartTotalAmt">₹0</span>
+        </div>
+        <button class="pay-now-btn" style="margin-top:0" onclick="closeCartDrawer();openPayModal()">Proceed to Payment 💳</button>
+        <div class="pay-secure">🔒 Secure checkout · Free delivery above ₹1499</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ PAYMENT MODAL ══ -->
+<div class="overlay" id="payModal">
+  <div class="pay-modal">
+    <div class="pay-head">
+      <h3>💳 Complete Payment</h3>
+      <button class="pay-close" onclick="closePayModal()">✕</button>
+    </div>
+    <div class="pay-body" id="payBody">
+      <!-- Product summary -->
+      <div class="pay-product-row" id="payProductRow"></div>
+      <!-- Payment tabs -->
+      <div class="pay-methods">
+        <button class="pay-tab active" onclick="switchPayTab('upi',this)">📱 UPI</button>
+        <button class="pay-tab" onclick="switchPayTab('card',this)">💳 Card</button>
+        <button class="pay-tab" onclick="switchPayTab('nb',this)">🏦 Net Banking</button>
+      </div>
+      <!-- UPI Section -->
+      <div class="pay-section active" id="pay-upi">
+        <div style="font-size:.76rem;font-weight:700;color:var(--mid);text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px">Choose UPI App</div>
+        <div class="upi-apps">
+          <div class="upi-app sel" id="upi-gpay" onclick="selectUpiApp('gpay',this)"><div class="upi-app-icon">🟢</div><div class="upi-app-name">Google Pay</div></div>
+          <div class="upi-app" id="upi-phonepe" onclick="selectUpiApp('phonepe',this)"><div class="upi-app-icon">🟣</div><div class="upi-app-name">PhonePe</div></div>
+          <div class="upi-app" id="upi-paytm" onclick="selectUpiApp('paytm',this)"><div class="upi-app-icon">🔵</div><div class="upi-app-name">Paytm</div></div>
+          <div class="upi-app" id="upi-other" onclick="selectUpiApp('other',this)"><div class="upi-app-icon">📲</div><div class="upi-app-name">Other UPI</div></div>
+        </div>
+        <div style="font-size:.76rem;font-weight:700;color:var(--mid);text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px">Or Enter UPI ID</div>
+        <div class="upi-id-row">
+          <input class="upi-id-inp" id="upiIdInp" type="text" placeholder="yourname@upi" oninput="validateUpiBtn()">
+          <button style="padding:10px 16px;border-radius:10px;border:none;background:var(--maroon);color:#fff;font-size:.8rem;font-weight:700;cursor:pointer;white-space:nowrap" onclick="verifyUpiId()">Verify</button>
+        </div>
+        <div id="upiVerifyStatus" style="font-size:.75rem;margin-top:6px;min-height:18px"></div>
+      </div>
+      <!-- Card Section -->
+      <div class="pay-section" id="pay-card">
+        <div class="card-visual" id="cardVisual">
+          <div class="card-chip">💳</div>
+          <div class="card-num-disp" id="cardNumDisp">•••• •••• •••• ••••</div>
+          <div class="card-meta">
+            <div><span>Card Holder</span><b id="cardNameDisp">YOUR NAME</b></div>
+            <div style="text-align:right"><span>Expires</span><b id="cardExpDisp">MM/YY</b></div>
+          </div>
+        </div>
+        <div class="card-fields">
+          <div><label style="font-size:.72rem;font-weight:700;color:var(--mid);text-transform:uppercase;letter-spacing:.6px;display:block;margin-bottom:5px">Card Number</label>
+            <input class="cin" id="cardNum" maxlength="19" placeholder="1234 5678 9012 3456" oninput="formatCard(this)" inputmode="numeric">
+          </div>
+          <div><label style="font-size:.72rem;font-weight:700;color:var(--mid);text-transform:uppercase;letter-spacing:.6px;display:block;margin-bottom:5px">Name on Card</label>
+            <input class="cin" id="cardName" placeholder="As printed on card" oninput="document.getElementById('cardNameDisp').textContent=this.value.toUpperCase()||'YOUR NAME'">
+          </div>
+          <div class="card-row2">
+            <div><label style="font-size:.72rem;font-weight:700;color:var(--mid);text-transform:uppercase;letter-spacing:.6px;display:block;margin-bottom:5px">Expiry</label>
+              <input class="cin" id="cardExp" maxlength="5" placeholder="MM/YY" oninput="formatExpiry(this)" inputmode="numeric">
+            </div>
+            <div><label style="font-size:.72rem;font-weight:700;color:var(--mid);text-transform:uppercase;letter-spacing:.6px;display:block;margin-bottom:5px">CVV</label>
+              <input class="cin" id="cardCvv" maxlength="3" placeholder="•••" type="password" inputmode="numeric">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Net Banking Section -->
+      <div class="pay-section" id="pay-nb">
+        <div style="font-size:.76rem;font-weight:700;color:var(--mid);text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px">Select Your Bank</div>
+        <div class="nb-list">
+          <div class="nb-item sel" onclick="selectBank(this)"><span class="nb-icon">🏦</span>SBI</div>
+          <div class="nb-item" onclick="selectBank(this)"><span class="nb-icon">🏦</span>HDFC Bank</div>
+          <div class="nb-item" onclick="selectBank(this)"><span class="nb-icon">🏦</span>ICICI Bank</div>
+          <div class="nb-item" onclick="selectBank(this)"><span class="nb-icon">🏦</span>Axis Bank</div>
+          <div class="nb-item" onclick="selectBank(this)"><span class="nb-icon">🏦</span>Kotak Bank</div>
+          <div class="nb-item" onclick="selectBank(this)"><span class="nb-icon">🏦</span>Punjab Natl</div>
+        </div>
+      </div>
+      <!-- Pay button -->
+      <button class="pay-now-btn" id="payNowBtn" onclick="processPayment()">
+        <span id="payBtnText">Pay ₹<span id="payBtnAmt">0</span> Now</span>
+        <span id="payBtnIcon">🔒</span>
+      </button>
+      <div class="pay-secure">🔒 256-bit SSL secured · Your payment info is safe</div>
+    </div>
+    <!-- Success screen (hidden initially) -->
+    <div id="paySuccess" style="display:none">
+      <div class="pay-success">
+        <div class="pay-success-icon">✅</div>
+        <h3>Order Placed Successfully!</h3>
+        <p>Thank you for your purchase from <b>Sahu Vastra Bhandar</b>.<br>Your saree will be delivered in 3–5 business days.</p>
+        <div class="pay-success-ref">Order ID: <b id="orderIdDisp"></b> &nbsp;·&nbsp; Amount: <b id="orderAmtDisp"></b></div>
+        <button class="pay-now-btn" style="max-width:260px;margin:0 auto" onclick="closePayModal();clearCart()">Continue Shopping 🛍️</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script>
 const API_BASE = 'http://localhost:3000/api';
@@ -892,6 +1088,8 @@ function openAdd(){
   document.getElementById('videoPrevEl').src='';
   document.querySelectorAll('.star-inp').forEach(s=>s.classList.remove('active'));
   document.getElementById('ratingText').textContent='Not rated';
+  // Show upload zones only for admin
+  document.getElementById('uploadZoneWrap').style.display=(user&&user.isAdmin)?'':'none';
   setAvailUI(true);document.getElementById('mTitle').textContent='Upload New Saree';
   document.getElementById('uploadModal').classList.add('open');
 }
@@ -913,6 +1111,8 @@ function openEdit(id){
     document.getElementById('videoPrevEl').src='';
   }
   if(pRating)setRating(pRating); setAvailUI(p.available);calcDisc();renderPrev();
+  // Show upload zones only for admin
+  document.getElementById('uploadZoneWrap').style.display=(user&&user.isAdmin)?'':'none';
   document.getElementById('mTitle').textContent='Edit Saree';document.getElementById('uploadModal').classList.add('open');
 }
 function closeUpload(){document.getElementById('uploadModal').classList.remove('open');}
@@ -1044,6 +1244,7 @@ function cardHTML(p){
         <span class="p-curr">₹${price.toLocaleString()}</span>
         ${pct?`<span class="p-disc">-${pct}%</span>`:''}
       </div>
+      <button class="cart-btn ${cartItems.find(i=>i.id===p.id)?'added':''}" id="cartbtn-${p.id}" onclick="event.stopPropagation();addToCart('${p.id}')">${cartItems.find(i=>i.id===p.id)?'✅ Added to Cart':'🛒 Add to Cart'}</button>
     </div>
   </div>`;
 }
@@ -1113,7 +1314,8 @@ function openView(id){
       ${p.desc?`<div class="m-desc">${p.desc}</div>`:''}
       <div style="font-size:.73rem;color:var(--light)">📸 ${p.photos?p.photos.length:0} photo(s)</div>
       <div class="m-actions">
-        <button class="btn-maroon" onclick="closeView()">← Back</button>
+        <button class="btn-maroon" onclick="closeView();addToCart('${p.id}');openCartDrawer()">🛒 Add to Cart</button>
+        <button class="btn-maroon" style="background:var(--gold)" onclick="closeView();addToCart('${p.id}');openPayModal()">💳 Buy Now</button>
         <button class="btn-wish2" onclick="this.innerHTML=this.innerHTML.includes('♡')?'❤️ Wishlisted':'♡ Wishlist'">♡ Wishlist</button>
       </div>
     </div>`;
@@ -1146,6 +1348,141 @@ vz.addEventListener('drop',e=>{
 let tt;
 function toast(msg,type='def'){document.querySelectorAll('.toast').forEach(t=>t.remove());const t=document.createElement('div');t.className='toast '+type;t.textContent=msg;document.body.appendChild(t);clearTimeout(tt);tt=setTimeout(()=>t.remove(),3500);}
 
+
+// ── CART ──
+let cartItems = JSON.parse(localStorage.getItem('svb_cart')||'[]');
+
+function saveCart(){localStorage.setItem('svb_cart',JSON.stringify(cartItems));}
+function updateCartBadge(){
+  const n=cartItems.length;
+  const badge=document.getElementById('cartBadge');
+  const label=document.getElementById('cartCountLabel');
+  badge.textContent=n;
+  badge.classList.toggle('show',n>0);
+  if(label)label.textContent=n>0?`Cart (${n})`:'Cart';
+}
+function addToCart(id){
+  const p=products.find(x=>x.id===id); if(!p)return;
+  const exists=cartItems.find(x=>x.id===id);
+  if(exists){toast('Already in cart! Go to cart to checkout.','def');return;}
+  cartItems.push({id:p.id,name:p.name,price:p.sale||p.orig,orig:p.orig,photo:p.photos&&p.photos.length?p.photos[0].d:null});
+  saveCart(); updateCartBadge();
+  // Update any visible cart button
+  const btn=document.getElementById('cartbtn-'+id);
+  if(btn){btn.textContent='✅ Added to Cart';btn.classList.add('added');}
+  toast('🛒 Added to cart!','ok');
+}
+function removeFromCart(id){
+  cartItems=cartItems.filter(x=>x.id!==id);
+  saveCart(); updateCartBadge(); renderCartDrawer();
+  // Revert card button if visible
+  const btn=document.getElementById('cartbtn-'+id);
+  if(btn){btn.textContent='🛒 Add to Cart';btn.classList.remove('added');}
+}
+function clearCart(){
+  cartItems=[]; saveCart(); updateCartBadge();
+  document.querySelectorAll('.cart-btn').forEach(b=>{b.textContent='🛒 Add to Cart';b.classList.remove('added');});
+}
+function openCartDrawer(){renderCartDrawer();document.getElementById('cartDrawer').classList.add('open');}
+function closeCartDrawer(){document.getElementById('cartDrawer').classList.remove('open');}
+function renderCartDrawer(){
+  const list=document.getElementById('cartItemsList');
+  const empty=document.getElementById('cartEmpty');
+  const total=document.getElementById('cartTotal');
+  const countEl=document.getElementById('cartDrawerCount');
+  if(!cartItems.length){list.innerHTML='';empty.style.display='';total.style.display='none';if(countEl)countEl.textContent='';return;}
+  empty.style.display='none'; total.style.display='';
+  if(countEl)countEl.textContent=`(${cartItems.length} item${cartItems.length>1?'s':''})`;
+  const totalAmt=cartItems.reduce((s,i)=>s+i.price,0);
+  document.getElementById('cartTotalAmt').textContent='₹'+totalAmt.toLocaleString();
+  list.innerHTML=cartItems.map(item=>`
+    <div style="display:flex;gap:11px;align-items:center;padding:11px 0;border-bottom:1px solid var(--border)">
+      ${item.photo?`<img src="${item.photo}" style="width:50px;height:62px;border-radius:8px;object-fit:cover;flex-shrink:0">`:`<div style="width:50px;height:62px;border-radius:8px;background:var(--pink);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">🪡</div>`}
+      <div style="flex:1;min-width:0">
+        <div style="font-size:.8rem;font-weight:700;color:var(--deep);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${item.name}</div>
+        <div style="font-size:.88rem;font-weight:800;color:var(--maroon);margin-top:3px">₹${item.price.toLocaleString()}</div>
+      </div>
+      <button onclick="removeFromCart('${item.id}')" style="background:#ffebee;color:var(--danger);border:none;width:28px;height:28px;border-radius:50%;font-size:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0">✕</button>
+    </div>`).join('');
+}
+
+// ── PAYMENT ──
+let payTabActive='upi', selUpiApp='gpay', payingProduct=null;
+
+function openPayModal(){
+  if(!cartItems.length){toast('Add items to cart first','err');return;}
+  // Build product summary from cart
+  const total=cartItems.reduce((s,i)=>s+i.price,0);
+  const firstItem=cartItems[0];
+  const row=document.getElementById('payProductRow');
+  row.innerHTML=`
+    ${firstItem.photo?`<img src="${firstItem.photo}" class="pay-product-img">`:'<div class="pay-product-ph">🪡</div>'}
+    <div style="flex:1;min-width:0">
+      <div class="pay-product-name">${cartItems.length>1?`${cartItems.length} items from Sahu Vastra Bhandar`:firstItem.name}</div>
+      <div style="margin-top:4px"><span class="pay-product-price">₹${total.toLocaleString()}</span></div>
+      ${cartItems.length>1?`<div style="font-size:.72rem;color:var(--mid);margin-top:3px">${cartItems.map(i=>i.name).join(', ').substring(0,60)}…</div>`:''}
+    </div>`;
+  document.getElementById('payBtnAmt').textContent=total.toLocaleString();
+  // Reset to UPI tab
+  switchPayTab('upi',document.querySelector('.pay-tab'));
+  document.getElementById('payBody').style.display='';
+  document.getElementById('paySuccess').style.display='none';
+  document.getElementById('payModal').classList.add('open');
+}
+function closePayModal(){document.getElementById('payModal').classList.remove('open');}
+function switchPayTab(tab,el){
+  payTabActive=tab;
+  document.querySelectorAll('.pay-tab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  document.querySelectorAll('.pay-section').forEach(s=>s.classList.remove('active'));
+  document.getElementById('pay-'+tab).classList.add('active');
+}
+function selectUpiApp(app,el){
+  selUpiApp=app;
+  document.querySelectorAll('.upi-app').forEach(a=>a.classList.remove('sel'));
+  el.classList.add('sel');
+}
+function verifyUpiId(){
+  const v=document.getElementById('upiIdInp').value.trim();
+  const st=document.getElementById('upiVerifyStatus');
+  if(!v||!v.includes('@')){st.innerHTML='<span style="color:var(--danger)">⚠️ Enter a valid UPI ID (e.g. name@upi)</span>';return;}
+  st.innerHTML='<span style="color:var(--mid)">⏳ Verifying…</span>';
+  setTimeout(()=>{st.innerHTML='<span style="color:var(--success)">✅ UPI ID verified!</span>';},1200);
+}
+function validateUpiBtn(){}
+function formatCard(inp){
+  let v=inp.value.replace(/\D/g,'').substring(0,16);
+  inp.value=v.replace(/(.{4})/g,'$1 ').trim();
+  let disp=document.getElementById('cardNumDisp');
+  let masked=v.padEnd(16,'•');
+  disp.textContent=masked.replace(/(.{4})/g,'$1 ').trim();
+}
+function formatExpiry(inp){
+  let v=inp.value.replace(/\D/g,'');
+  if(v.length>=2)v=v.substring(0,2)+'/'+v.substring(2,4);
+  inp.value=v;
+  document.getElementById('cardExpDisp').textContent=v||'MM/YY';
+}
+function selectBank(el){document.querySelectorAll('.nb-item').forEach(b=>b.classList.remove('sel'));el.classList.add('sel');}
+function processPayment(){
+  const btn=document.getElementById('payNowBtn');
+  const txtEl=document.getElementById('payBtnText');
+  const iconEl=document.getElementById('payBtnIcon');
+  btn.disabled=true;
+  txtEl.textContent='Processing…';
+  iconEl.outerHTML='<span id="payBtnIcon" class="spinner"></span>';
+  setTimeout(()=>{
+    const total=cartItems.reduce((s,i)=>s+i.price,0);
+    const orderId='SVB'+Date.now().toString().slice(-8);
+    document.getElementById('orderIdDisp').textContent=orderId;
+    document.getElementById('orderAmtDisp').textContent='₹'+total.toLocaleString();
+    document.getElementById('payBody').style.display='none';
+    document.getElementById('paySuccess').style.display='';
+    btn.disabled=false;
+  },2000);
+}
+
+updateCartBadge();
 updateNav();renderHome();
 </script>
 </body>

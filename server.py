@@ -12,7 +12,7 @@ FAST2SMS_API_KEY = "PASTE_YOUR_FAST2SMS_API_KEY"
 ADMIN_MOBILE = "8948815093"
 ADMIN_PASSWORD = "admin@svb123"
 
-PORT = 3000
+PORT = 5000
 otp_store = {}
 
 def generate_otp():
@@ -112,5 +112,5 @@ def home():
     return send_from_directory(".", "index.html")
 
 if __name__ == "__main__":
-    print("Server running at http://localhost:3000")
+    print("Server running at http://localhost:5000")
     app.run(port=PORT, debug=True)
