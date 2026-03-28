@@ -1,0 +1,6 @@
+flask
+flask-cors
+pymongo
+requests
+cloudinary
+gunicorn
