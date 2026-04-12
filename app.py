@@ -11,7 +11,6 @@ from bson import ObjectId
 import os
 from functools import wraps
 from datetime import datetime, timedelta
-import ssl
 
 app = Flask(__name__, static_folder=".")
 CORS(app)
@@ -34,13 +33,10 @@ try:
     if not MONGO_URI:
         raise ValueError("MONGO_URI environment variable is not set!")
         client = MongoClient(
-            MONGO_URI,
-            connectTimeoutMS=5000,
-            serverSelectionTimeoutMS=5000,
-            tls=True,
-            tlsAllowInvalidCertificates=True,
-            ssl_cert_reqs=ssl.CERT_NONE
-        )
+        MONGO_URI,
+        connectTimeoutMS=5000,
+        serverSelectionTimeoutMS=5000
+    )
     client.admin.command('ping')
     db           = client["sahu_vastra_bhandar"]
     users_col    = db["users"]
