@@ -12,9 +12,6 @@ import os
 from functools import wraps
 from datetime import datetime, timedelta
 
-# ─── LOAD .env ───
-load_dotenv()
-
 app = Flask(__name__, static_folder=".")
 CORS(app)
 
