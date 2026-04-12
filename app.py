@@ -32,7 +32,13 @@ PORT = int(os.environ.get("PORT", 5000))
 try:
     if not MONGO_URI:
         raise ValueError("MONGO_URI environment variable is not set!")
-    client = MongoClient(MONGO_URI, connectTimeoutMS=5000, serverSelectionTimeoutMS=5000)
+        client = MongoClient(
+        MONGO_URI,
+        connectTimeoutMS=5000,
+        serverSelectionTimeoutMS=5000,
+        tls=True,
+        tlsAllowInvalidCertificates=True
+    )
     client.admin.command('ping')
     db           = client["sahu_vastra_bhandar"]
     users_col    = db["users"]
