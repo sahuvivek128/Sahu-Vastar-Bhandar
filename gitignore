@@ -1,0 +1,16 @@
+# ⚠️ Secrets — NEVER upload these to GitHub
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+*.egg-info/
+
+# OS files
+.DS_Store
+Thumbs.db
