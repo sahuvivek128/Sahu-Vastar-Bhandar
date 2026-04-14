@@ -29,10 +29,16 @@ CLOUDINARY_SECRET= os.getenv("CLOUDINARY_SECRET")
 PORT = int(os.environ.get("PORT", 5000))
 
 # ─── MONGODB ───
+client = None
+db = None
+users_col = None
+products_col = None
+orders_col = None
+
 try:
     if not MONGO_URI:
         raise ValueError("MONGO_URI environment variable is not set!")
-        client = MongoClient(
+    client = MongoClient(
         MONGO_URI,
         connectTimeoutMS=5000,
         serverSelectionTimeoutMS=5000
