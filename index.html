@@ -4,9 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sahu Vastra Bhandar – Premium Sarees</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://res.cloudinary.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta name="color-scheme" content="light">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@font-face{font-display:swap}
 :root{
   --maroon:#7b1c2e;--deep:#4e0f1b;--gold:#c9933a;--lgold:#f5d88a;
   --cream:#fdf7f0;--pink:#fceef3;--white:#fff;
@@ -19,10 +24,11 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer}
 input,textarea,select{font-family:'DM Sans',sans-serif}
 
 /* ─── TOP BAR ─── */
-.top-bar{background:var(--maroon);color:#fff;text-align:center;font-size:.75rem;padding:7px;letter-spacing:.5px}
+.top-bar{background:linear-gradient(90deg,var(--deep),var(--maroon),var(--deep));background-size:200% 100%;color:#fff;text-align:center;font-size:.75rem;padding:8px;letter-spacing:.5px;animation:shimmer 6s ease infinite}
+@keyframes shimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
 
 /* ─── HEADER ─── */
-header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.07)}
+header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.07);transform:translateZ(0);will-change:transform}
 .header-main{max-width:1300px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
 .logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
 .logo-mark{width:42px;height:42px;background:linear-gradient(135deg,var(--maroon),var(--deep));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;color:#fff}
@@ -42,16 +48,17 @@ header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top
 .nav-bar{border-top:1px solid var(--border);background:#fff}
 .nav-inner{max-width:1300px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;overflow-x:auto;scrollbar-width:none}
 .nav-inner::-webkit-scrollbar{display:none}
-.nav-link{padding:12px 16px;font-size:.82rem;font-weight:500;color:var(--mid);white-space:nowrap;border-bottom:2.5px solid transparent;transition:all .2s;cursor:pointer}
+.nav-link{padding:12px 16px;font-size:.82rem;font-weight:500;color:var(--mid);white-space:nowrap;border-bottom:2.5px solid transparent;transition:color .2s,border-color .2s;cursor:pointer}
 .nav-link:hover,.nav-link.active{color:var(--maroon);border-bottom-color:var(--maroon)}
 
 /* ─── PAGES ─── */
 .page{display:none;animation:fadeUp .3s ease}
 .page.active{display:block}
-@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.page{will-change:opacity,transform}
 
 /* ─── HERO ─── */
-.hero{background:linear-gradient(135deg,var(--deep) 0%,var(--maroon) 55%,#a0263c 100%);color:#fff;padding:60px 1.5rem 50px;text-align:center;position:relative;overflow:hidden}
+.hero{background:linear-gradient(135deg,var(--deep) 0%,var(--maroon) 55%,#a0263c 100%);color:#fff;padding:60px 1.5rem 50px;text-align:center;position:relative;overflow:hidden;transform:translateZ(0)}
 .hero::before{content:'';position:absolute;inset:0;opacity:.05;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z' fill='%23fff'/%3E%3C/svg%3E")}
 .hero h2{font-family:'Playfair Display',serif;font-size:2.6rem;margin-bottom:10px;line-height:1.2;position:relative}
 .hero h2 em{color:var(--lgold);font-style:italic}
@@ -68,7 +75,7 @@ header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top
 @media(max-width:820px){.shop-layout{grid-template-columns:1fr}.sidebar{display:none}}
 
 /* ─── SIDEBAR ─── */
-.sidebar-section{background:#fff;border-radius:var(--radius);padding:18px;margin-bottom:14px;border:1px solid var(--border)}
+.sidebar-section{background:#fff;border-radius:var(--radius);padding:18px;margin-bottom:14px;border:1px solid var(--border);contain:content}
 .sb-title{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--maroon);margin-bottom:13px;display:flex;justify-content:space-between;align-items:center}
 .sb-reset{font-size:.7rem;color:var(--gold);cursor:pointer;font-weight:500;text-transform:none;letter-spacing:0}
 .sb-reset:hover{text-decoration:underline}
@@ -113,10 +120,10 @@ header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top
 @media(max-width:420px){.product-grid{grid-template-columns:1fr!important}}
 
 /* ─── PRODUCT CARD (matching reference exactly) ─── */
-.pcard{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);transition:box-shadow .25s,transform .25s;cursor:pointer;position:relative}
+.pcard{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);transition:box-shadow .3s cubic-bezier(.4,0,.2,1),transform .3s cubic-bezier(.4,0,.2,1);cursor:pointer;position:relative;contain:layout style;will-change:transform}
 .pcard:hover{box-shadow:0 10px 32px rgba(123,28,46,.15);transform:translateY(-3px)}
 .pcard-img{position:relative;aspect-ratio:.72;background:var(--pink);overflow:hidden}
-.pcard-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.pcard-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s;will-change:transform}
 .pcard:hover .pcard-img img{transform:scale(1.04)}
 .pcard-img-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--light);font-size:.72rem}
 .pcard-img-ph .ico{font-size:40px}
@@ -152,8 +159,9 @@ header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top
 .p-disc{background:var(--danger);color:#fff;font-size:.68rem;font-weight:700;padding:2px 7px;border-radius:4px}
 
 /* ─── MODALS ─── */
-.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:300;align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(5px)}
-.overlay.open{display:flex;animation:fadeUp .2s ease}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:300;align-items:center;justify-content:center;padding:1rem}
+.overlay.open{display:flex;animation:overlayIn .25s cubic-bezier(.4,0,.2,1)}
+@keyframes overlayIn{from{opacity:0}to{opacity:1}}
 .modal{background:#fff;border-radius:20px;width:100%;max-height:92vh;overflow-y:auto;box-shadow:0 30px 80px rgba(0,0,0,.3)}
 .modal-head{display:flex;justify-content:space-between;align-items:center;padding:20px 24px 0}
 .m-close{background:var(--pink);border:none;width:34px;height:34px;border-radius:50%;font-size:16px;cursor:pointer;transition:background .2s;display:flex;align-items:center;justify-content:center}
@@ -290,11 +298,11 @@ header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top
 .empty .ei{font-size:52px;margin-bottom:12px}
 .empty h3{font-family:'Playfair Display',serif;color:var(--deep);font-size:1.15rem;margin-bottom:5px}
 .empty p{font-size:.8rem}
-footer{background:var(--deep);color:rgba(255,255,255,.7);text-align:center;padding:20px;font-size:.76rem;margin-top:40px}
+footer{background:var(--deep);color:rgba(255,255,255,.7);text-align:center;padding:20px;font-size:.76rem;margin-top:40px;content-visibility:auto}
 footer b{color:var(--lgold)}
 
 /* ─── CART BUTTON ON CARD ─── */
-.cart-btn{width:100%;margin-top:9px;padding:9px 0;border-radius:8px;border:none;background:linear-gradient(135deg,var(--maroon),var(--deep));color:#fff;font-size:.78rem;font-weight:700;cursor:pointer;letter-spacing:.3px;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:6px}
+.cart-btn{width:100%;margin-top:9px;padding:9px 0;border-radius:8px;border:none;background:linear-gradient(135deg,var(--maroon),var(--deep));color:#fff;font-size:.78rem;font-weight:700;cursor:pointer;letter-spacing:.3px;transition:background .25s,transform .2s cubic-bezier(.4,0,.2,1),box-shadow .25s;display:flex;align-items:center;justify-content:center;gap:6px}
 .cart-btn:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(123,28,46,.35)}
 .cart-btn.added{background:linear-gradient(135deg,var(--success),#1b5e20)}
 
@@ -407,6 +415,25 @@ footer b{color:var(--lgold)}
 .admin-fab-btn{background:linear-gradient(135deg,var(--maroon),var(--deep));color:#fff;border:none;border-radius:50px;padding:13px 22px;font-size:.88rem;font-weight:700;box-shadow:0 6px 24px rgba(123,28,46,.45);cursor:pointer;display:flex;align-items:center;gap:9px;transition:all .22s;white-space:nowrap}
 .admin-fab-btn:hover{transform:translateY(-3px);box-shadow:0 10px 32px rgba(123,28,46,.55);background:var(--deep)}
 .admin-fab-label{background:rgba(30,16,16,.82);color:#fff;font-size:.7rem;padding:4px 12px;border-radius:20px;pointer-events:none;letter-spacing:.3px}
+
+/* Performance: reset will-change after hover to free GPU memory */
+.pcard:not(:hover){will-change:auto}
+.pcard-img img:not(:hover){will-change:auto}
+/* Smooth scrolling on the page itself */
+html{scroll-behavior:smooth}
+/* Reduce paint area for absolute positioned badges */
+.wish-btn,.badge-trending,.badge-new-arr,.b-avail,.photo-cnt{contain:layout style}
+/* Use transform for toast animation (GPU composited) */
+.toast{contain:layout style;transform:translateZ(0)}
+.modal::-webkit-scrollbar{width:5px}
+.modal::-webkit-scrollbar-track{background:transparent}
+.modal::-webkit-scrollbar-thumb{background:var(--border);border-radius:10px}
+.modal::-webkit-scrollbar-thumb:hover{background:var(--light)}
+
+.pcard-img img{opacity:0;transition:opacity .35s ease,transform .4s cubic-bezier(.4,0,.2,1);will-change:transform,opacity}
+.pcard-img img.loaded{opacity:1}
+
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:4px}
 </style>
 </head>
 <body>
@@ -1196,9 +1223,14 @@ function gotoPage(p){
   document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
   document.getElementById('page-'+p).classList.add('active');
   document.querySelectorAll('.nav-link').forEach(l=>l.classList.remove('active'));
-  if(p==='shop'){loadProducts().then(renderShop);}
-  if(p==='home'){loadProducts().then(renderHome);}
-  if(p==='admin'){loadProducts().then(renderAdmin);}
+  const doRender = ()=>{
+    if(p==='shop') renderShop();
+    else if(p==='home') renderHome();
+    else if(p==='admin') renderAdmin();
+  };
+  // Only fetch products if we don't have them yet
+  if(!products.length) loadProducts().then(doRender);
+  else doRender();
 }
 function updateNav(){
   const li=!!user, ad=!!(user&&user.isAdmin);
@@ -1611,12 +1643,25 @@ async function delProduct(id){
 // ─────────────────────────────────────────────
 function setQF(f){quickFilter=f;gotoPage('shop');}
 function setMaxPrice(v,el){document.querySelectorAll('.pchip').forEach(c=>c.classList.remove('active'));if(el)el.classList.add('active');maxPrice=v;const s=document.getElementById('priceSlider');if(s){s.value=Math.min(v,20000);document.getElementById('priceVal').textContent=v.toLocaleString();}renderShop();}
-function priceFilter(v){maxPrice=parseInt(v);document.getElementById('priceVal').textContent=parseInt(v).toLocaleString();renderShop();}
+let _priceTimer;
+function priceFilter(v){
+  maxPrice=parseInt(v);
+  document.getElementById('priceVal').textContent=parseInt(v).toLocaleString();
+  clearTimeout(_priceTimer);
+  _priceTimer=setTimeout(renderShop,180);
+}
 function resetPrice(){maxPrice=20000;document.getElementById('priceSlider').value=20000;document.getElementById('priceVal').textContent='20,000';renderShop();}
 function toggleCat(cb){const v=cb.value;if(cb.checked)catFilters.push(v);else catFilters=catFilters.filter(x=>x!==v);renderShop();}
 function clearCat(){catFilters=[];document.querySelectorAll('.fcheck input').forEach(c=>c.checked=false);renderShop();}
 function toggleColor(c,el){if(colorFilter===c){colorFilter='';el.classList.remove('active');}else{document.querySelectorAll('.swatch').forEach(s=>s.classList.remove('active'));colorFilter=c;el.classList.add('active');}renderShop();}
-function liveSearch(v){quickFilter='search:'+v.toLowerCase();if(document.getElementById('page-shop').classList.contains('active'))renderShop();}
+let _searchTimer;
+function liveSearch(v){
+  clearTimeout(_searchTimer);
+  _searchTimer=setTimeout(()=>{
+    quickFilter='search:'+v.toLowerCase();
+    if(document.getElementById('page-shop').classList.contains('active'))renderShop();
+  },220);
+}
 function getFiltered(){
   let ps=[...products];
   const sort=document.getElementById('sortSel')?.value||'',avOnly=document.getElementById('availCheck')?.checked;
@@ -1647,7 +1692,7 @@ function cardHTML(p){
   const id=p._id||p.id;
   const price=p.sale||p.orig, pct=p.sale?Math.round((p.orig-p.sale)/p.orig*100):0;
   const photoUrl = getPhotoUrl(p);
-  const imgH = photoUrl ? `<img src="${photoUrl}" alt="${p.name}">` : `<div class="pcard-img-ph"><div class="ico">🪡</div><span>No photo</span></div>`;
+  const imgH = photoUrl ? `<img src="${photoUrl}" alt="${p.name}" loading="lazy" decoding="async" onload="this.classList.add('loaded')" onerror="this.style.display='none'">` : `<div class="pcard-img-ph"><div class="ico">🪡</div><span>No photo</span></div>`;
   const starRow=p.rating?`<div class="star-row"><span class="stars">${starsHTML(p.rating)}</span><span class="star-count">(${(p.reviews||0).toLocaleString()})</span></div>`:'';
   return`<div class="pcard" onclick="openView('${id}')">
     <div class="pcard-img">
@@ -2322,6 +2367,10 @@ async function processPayment(){
 // ─────────────────────────────────────────────
 // INIT
 // ─────────────────────────────────────────────
+// Performance: use passive event listeners for scroll (prevents jank)
+document.addEventListener('scroll', ()=>{}, {passive:true});
+window.addEventListener('scroll', ()=>{}, {passive:true});
+
 updateCartBadge();
 updateNav();
 // Safety on page load: force-hide upload controls if user is not admin
